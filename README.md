@@ -75,7 +75,9 @@ Install the QPID client:
 pip install python-qpid-proton
 ```
 
-Run client:
+Run the client. The client publishes messages to a Topic
+(`/examples/test`), and afterwards reads its message from the same
+topic.
 
 ```
 python client.py
