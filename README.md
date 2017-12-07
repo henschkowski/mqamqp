@@ -25,32 +25,42 @@ Create an AMQP channel:
 ```echo "ALTER CHANNEL(SYSTEM.DEF.AMQP) CHLTYPE(AMQP) MCAUSER(mqm)" | runmqsc QMGR2```
 
 Give permissions to user:
-```setmqaut -m QMGR2 -t qmgr -p mqm -all +connect```
 
-```setmqaut -m QMGR2 -t qmgr -p mqm +all ```
+```
+setmqaut -m QMGR2 -t qmgr -p mqm -all +connect
+setmqaut -m QMGR2 -t qmgr -p mqm +all 
+```
 
 
 Open Security for admin user 'mqm' (http://www-01.ibm.com/support/docview.wss?uid=swg21680930):
-```echo "ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) CHCKCLNT(OPTIONAL)" | runmqsc QMGR2```
 
-```echo "REFRESH SECURITY TYPE(CONNAUTH)" | runmqsc QMGR2```
+```
+echo "ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) CHCKCLNT(OPTIONAL)" | runmqsc QMGR2
+echo "REFRESH SECURITY TYPE(CONNAUTH)" | runmqsc QMGR2
+```
 
 
 Start AMQP service and channel:
-```echo "START SERVICE(SYSTEM.AMQP.SERVICE)" | runmqsc QMGR2```
 
-```echo "START CHANNEL(SYSTEM.DEF.AMQP)" | runmqsc QMGR2```
+```
+echo "START SERVICE(SYSTEM.AMQP.SERVICE)" | runmqsc QMGR2
+echo "START CHANNEL(SYSTEM.DEF.AMQP)" | runmqsc QMGR2
+```
 
 
 ### Client side ###
 
 Create a Virtual Environment:
-```virtualenv -p python3 .```
 
-```. bin/activate```
+```
+virtualenv -p python3 .
+. bin/activate
+```
 
 Install the QPID client:
+
 ```pip install python-qpid-proton```
 
 Run client:
+
 ```python client.py```
