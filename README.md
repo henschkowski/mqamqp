@@ -26,16 +26,19 @@ Create an AMQP channel:
 
 Give permissions to user:
 ```setmqaut -m QMGR2 -t qmgr -p mqm -all +connect```
+
 ```setmqaut -m QMGR2 -t qmgr -p mqm +all ```
 
 
 Open Security for admin user 'mqm' (http://www-01.ibm.com/support/docview.wss?uid=swg21680930):
 ```echo "ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) CHCKCLNT(OPTIONAL)" | runmqsc QMGR2```
+
 ```echo "REFRESH SECURITY TYPE(CONNAUTH)" | runmqsc QMGR2```
 
 
 Start AMQP service and channel:
 ```echo "START SERVICE(SYSTEM.AMQP.SERVICE)" | runmqsc QMGR2```
+
 ```echo "START CHANNEL(SYSTEM.DEF.AMQP)" | runmqsc QMGR2```
 
 
@@ -43,6 +46,7 @@ Start AMQP service and channel:
 
 Create a Virtual Environment:
 ```virtualenv -p python3 .```
+
 ```. bin/activate```
 
 Install the QPID client:
