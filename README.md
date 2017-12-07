@@ -15,14 +15,23 @@ Setup AMQP channel:
 (From https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.amqp.doc/tamqp_creating.htm)
 
 Create a queue manager:
-```crtmqm QMGR2```
+
+```
+crtmqm QMGR2
+```
 
 Increase command level to have AMQP features enabled:
-```strmqm -e CMDLEVEL=801  QMGR2```
+
+```
+strmqm -e CMDLEVEL=801  QMGR2
+```
 
 
 Create an AMQP channel:
-```echo "ALTER CHANNEL(SYSTEM.DEF.AMQP) CHLTYPE(AMQP) MCAUSER(mqm)" | runmqsc QMGR2```
+
+```
+echo "ALTER CHANNEL(SYSTEM.DEF.AMQP) CHLTYPE(AMQP) MCAUSER(mqm)" | runmqsc QMGR2
+```
 
 Give permissions to user:
 
@@ -59,8 +68,12 @@ virtualenv -p python3 .
 
 Install the QPID client:
 
-```pip install python-qpid-proton```
+```
+pip install python-qpid-proton
+```
 
 Run client:
 
-```python client.py```
+```
+python client.py
+```
