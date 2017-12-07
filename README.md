@@ -15,18 +15,18 @@ Setup AMQP channel:
 (From https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.amqp.doc/tamqp_creating.htm)
 
 Create a queue manager:
-    crtmqm QMGR2
+```crtmqm QMGR2```
 
 Increase command level to have AMQP features enabled:
-    strmqm -e CMDLEVEL=801  QMGR2
+```strmqm -e CMDLEVEL=801  QMGR2```
 
 
 Create an AMQP channel:
-    echo "ALTER CHANNEL(SYSTEM.DEF.AMQP) CHLTYPE(AMQP) MCAUSER(mqm)" | runmqsc QMGR2
+```echo "ALTER CHANNEL(SYSTEM.DEF.AMQP) CHLTYPE(AMQP) MCAUSER(mqm)" | runmqsc QMGR2```
 
 Give permissions to user:
-    setmqaut -m QMGR2 -t qmgr -p mqm -all +connect
-    setmqaut -m QMGR2 -t qmgr -p mqm +all 
+```setmqaut -m QMGR2 -t qmgr -p mqm -all +connect```
+```setmqaut -m QMGR2 -t qmgr -p mqm +all ```
 
 
 Open Security for admin user 'mqm' (http://www-01.ibm.com/support/docview.wss?uid=swg21680930):
