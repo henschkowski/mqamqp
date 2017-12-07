@@ -1,7 +1,7 @@
 ### General ###
 
 This repository provides instructions on setting up a IBM MQ Queue
-manager with a AMQP channel, and a working Apache QPid python3 client to send a receive messages.
+manager with a AMQP channel, and a working Apache QPid python3 client to send and receive messages.
 
 IBM AMQP Support:
 https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_8.0.0/com.ibm.mq.amqp.doc/amqp_support.htm
