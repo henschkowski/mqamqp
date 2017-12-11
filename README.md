@@ -54,7 +54,7 @@ Security alternatives:
     ```
 
 
--  Set the UNIX password for user mqm and change connection URL in client.py like
+-  Set the OS (UNIX) password for user mqm and change connection URL in client.py like
 
     ```python
     ...
